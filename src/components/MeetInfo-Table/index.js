@@ -16,20 +16,15 @@ const Table = ({ columns, data }) => {
 
   return (
     <TableWrapper>
-      <h1 className="meetings-table-title">
-        <a href="#meetings">Layer5 Meetings</a>
-      </h1>
-      <h3 className="meetings-table-subtitle">
-        Everyone is welcome to join. Engage!
-      </h3>
-      <table name="meetings" id="meetings" {...getTableProps()}>
+      <a name="meetings" id="meetings"></a>
+      <h1 className="meetings-table-title">Layer5 Meetings</h1>
+      <h3 className="meetings-table-subtitle">Everyone is welcome to join. Engage!</h3>
+      <table {...getTableProps()}>
         <thead>
-          {headerGroups.map((headerGroup) => (
+          {headerGroups.map(headerGroup => (
             <tr key={"table-header"} {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th key={column} {...column.getHeaderProps()}>
-                  {column.render("Header")}
-                </th>
+                <th key={column} {...column.getHeaderProps()}>{column.render("Header")}</th>
               ))}
             </tr>
           ))}
